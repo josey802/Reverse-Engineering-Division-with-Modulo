@@ -3,10 +3,6 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
  'o', 'p', 'q', 'r', 's', 't', 'u', 
  'v', 'w', 'x', 'y', 'z']
 
-# direction = input("Type 'encode' to encrypt, type 'decode' to decrypt: \n").lower()
-# text = input("Type your message: \n").lower()
-# shift = int(input("Type your shift number: \n"))
-
 def encrypt(original_text, shift_amount):
   cipher_text = ""
   for letter in original_text:
@@ -15,11 +11,10 @@ def encrypt(original_text, shift_amount):
     else:
       shifted_position = alphabet.index(letter) + shift_amount
 
-      shifted_position %= len(alphabet) #0-25
+      shifted_position %= len(alphabet) 
       cipher_text += alphabet[shifted_position]
   print(f"Here is the encoded text result: {cipher_text}")
 
-# encrypt(original_text= text, shift_amount= shift)
 
 def decrypt(original_text, shift_amount):
   decrypted_text = ""
@@ -31,8 +26,7 @@ def decrypt(original_text, shift_amount):
       shifted_position %= len(alphabet)
       decrypted_text += alphabet[shifted_position]
   print(f"Here is the decoded text result : {decrypted_text}")
-
-# decrypt(original_text=text, shift_amount= shift)          
+          
 
 def caesar():
   while True:
@@ -59,6 +53,6 @@ def caesar():
       again = input("\n Type 'yes' to go again, or anything else to quit: \n").lower()
       if again != "yes":
         print("Goodbye")
-        break  
+        break 
 
 caesar()
